@@ -1,0 +1,85 @@
+0:44, Sunday, 29/11/2020
+
+*ỔN ĐỊNH(Khi thay đổi css khác thì nó sẽ thế nào có thay đổi chức năng, ý nghĩa của nó so với ban đầu không , Ý NGHĨA(Với các trang khác như google thì element này nó có ý nghĩa về mặt nội dung như thế nào  ), LIÊN KẾT( Với các element khác nó có ý nghĩa như thế nào- bổ sung thông tin ? )
+
+ID và Class in HTML Khác nhau ntn ? 
+
+- ID là identify như kiểu mỗi công dân trên thế giới đều có cmnd đó là id thì id trong html cũng vậy. ID chỉ mang tính duy nhất, ta sử dụng id khi chỉ cần chỉnh sửa 1 đối tượng duy nhất. Còn với class 1 tập thể, trong trường hợp muốn chỉ sửa css cho toàn bộ, hay 1 số nhóm thẻ tag nào đó thì phải dùng class. ID cũng có thể dùng cho toàn bộ một danh sách các thẻ nhưng dùng theo kiểu global và local ( thẻ cha chứa các thẻ con thì thẻ cha bị ảnh hưởng các thẻ con cũng sẽ bị ảnh hưởng ).
+- Có rất nhiều cách chọn thẻ để chỉnh sửa css cần tìm hiểu thêm.
+
+13:56, Sunday, 29/11/2020
+width , height  - content ) cho các thẻ. Ta có 3 loại: 
+				+ Block element : Các thẻ vùng có thể chứa các thẻ inline, có thể thay đổi kích cỡ vùng chứa như : p , h1 - h6 , header , footer , sidebar , section , ul , ol,div
+				+ Inline : Nằm trong các thành phần block element. Các thẻ này không thể thay kích cỡ vùng chứa như : input , button , label , span, a, ... . Margin trên dưới sẽ triệt tiêu nhưng vẫn còn trái phải
+				+ Inline - Block : Nằm trong thành phần block như inline nhưng có thể thay đổi vùng chứa : img
+- Block không thể nằm trong inline , nhưng inline thì nằm được trong block . Block có thể nằm trong block , inline có thể nằm trong inline. 
+
+15:33, Sunday, 29/11/2020
+- Css có 6 thuộc tính quan trọng:
+	+ Kích thước content bên trong : width , height
+	+ Border : Độ rộng đường viền : Width - style - color
+	+ padding : Độ rộng từ nội dung đến đường viền ( theo kim đồng hồ ) : Top - right - bottom - left .
+	 VD :Padding : 30px 50px  100px 60px, cách viết gộp ngoài ra có thể viết đơn padding-right(bottom,left,top):    
+	+ margin : Khoảng cách viền với các element xung quanh. 
+	+ Tổng kích thước 1 element = content  + border + padding + margin ;   
+	+  Box - sizing : là 1 thuộc tính giúp làm chủ được width vaf height của 1 element, ta có thể thêm bớt các thuộc tính khác mà không ảnh hưởng đến kích thước của 1 element mà ta muốn ban đầu. 
+		 - Border-Box = Content + border + padding
+		 - Content - box = content
+	+ Display :Trong trường hợp muốn thay đổi 1 kiểu từ inline sang block ta dùng display  
+
+
+18:25, Sunday, 29/11/2020
+- Mỗi 1 trình duyệt đều có 1 kích thước mặc định khác nhau vì thế nên ta có 1 khái niệm là Reset css mọi thứ về chung 1 mặc định để điều chỉnh dễ hơn 
+
+18:55, Monday, 30/11/2020 
+- Có 2 yếu tố cơ bản ảnh hưởng đến vị trí kích thước của 1 element là float và clear
+- float ( float : left , float : right ) :  element luôn có xu hướng ép lên trên , float dùng để xác định xem vùng nhớ ép lên bên tay trái hay phải, các con đi theo đằng sau nó nếu mà float cùng 1 loại sẽ như cha con nối nhau ép lên các vị trí trống 
+- clear : có tác dụng giúp thành phần đó không chèn lên các chỗ còn trống của thẻ đứng trước nó  right , left là  không chèn chỗ trống của thẻ bên phải hay trái trước nó 1 bậc 
+
+
+1. Kích thước vùng elment cha sẽ bằng tổng kích thước các element con nhưng mà khi dùng float tạo sao nó lại về 0 ? 
+- Vì giả sử nếu ta ép 1 element con sang phải và 1 cái sang trái, trình duyệt sẽ không phân biệt được vùng nhớ nào lớn hơn để lấy nên sẽ đặt giá trị không tính được đó của element cha  = 0 ;
+
+2. Nhưng khi đi làm các thẻ vùng nhớ không bao giờ được để kích thước có giá trị là 0 như trường hợp trên. Vậy ta sẽ giải quyết ntn ? 
+CÁCH 1: Lấy thằng dưới cùng làm nền các thẻ khác ở trên cái nền thẻ đó . Hãy tưởng tượng các thẻ đang đứng trên mảnh đất, nếu như không có 1 thẻ khác làm cái lót nền thì khi ta muốn đặt cái background  thì cái element cha đang có giá trị 0 thì không thể nào thay đổi được , lúc đấy cái element cha phải là 1 thằng con trong số đó làm cái lớp nền bao phủ toàn bộ element khác rồi giờ thằng cha sẽ là thằng con đó 
+CÁCH 2 : Dùng after , before , content
+- Ta sẽ đặt một element ở dưới để chặn, nhưng có 1 số trường hợp ta đặt element nó sẽ bị ảnh hưởng theo float nên ta sẽ dùng clear để giải quyết. Clear có tác dụng xoá không chèn theo chỗ thừa của element nào cả 
+
+3:44,Friday, 4/12/2020
+Vậy bài này nhằm mục đích gì ? 
+- Có 1 mục gọi là ảnh bị chèn lên nội dung, ví dụ element float : left,  element 2 không clear đi thì vùng nhớ của element 2 sẽ kéo dài theo khoảng không gian của element 1 lúc này tổng diện tích của element 2 = kích content element 1 + kích thước content element2 . Vậy là element bị element 1 nằm đè lên. Ta phải dùng clear để tách riêng 2 cái thành 2 khoảng không riêng không bị đè 
+
+4:34, Friday, 4/12/2020
+- Position : Dùng để đặt vị trí chính xác theo mình mong muốn 
+	+ fixed : Vị trí theo body
+	+ relative : gốc để cho absolute theo
+	+ absolute : vị trí theo relative
+	+ stickey : element khi cuộn con chuột sẽ không bị trôi 
+2:43, Tuesday , 8/12/2020 
+- Display : flex  : dùng để đặt kích thước linh hoạt sao cho các kích thước element bằng nhau về độ dài kể cả khi kích thước nội dung khác nhau 
+- Flex - grow : Chiếm khoảng trống element cha theo tỉ lệ ( dãn ra )
+- flex - shrink : tỉ lệ co lại theo thành phần cha ( co lại )
+- flex - wrap : khi con thiếu thì sẽ xuống dòng 
+- flex - direction : 
+	+ row - reverse : xếp ngược lại theo chiều ngang 
+	+ column : xếp theo chiều dọc 
+- flex - basis : đè lên 2 giá trị width và height tuỳ thuộc vào flex - dicrection là row hay là column
+- justyfi - content : căn chỉnh element con theo trục main
+	+ center , space between , space around , space betwen , flex - start , flex- end 
+- aline - item : căn chỉnh element con theo trục cross
+
+TEXT AND BACKGROUND
+15/12/2020
+- text - aline : ảnh hưởng đến các thẻ con inline element bên trong 1 thẻ khác 
+- BackGround : 	+ background - clip 
+				+ background - size : 	width px height px
+										cover
+				+ background - image
+				+ background - repeat : repeat-x
+										repeat-y	
+										repeat
+										no 
+				+ background - position
+- khi mà code có background image thì phải có background color để tránh trường hợp xấu là content hiển thị không có ảnh thì sẽ có background sau để hiển thị chọn color cho phù hợp với content 
+Background : [màu] [file ảnh] , [lặp], [vị trí] 
+
