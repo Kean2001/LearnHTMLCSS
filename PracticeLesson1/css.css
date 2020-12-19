@@ -1,0 +1,133 @@
+*{
+    margin :0;
+    padding :0;
+    box-sizing: border-box;
+}
+li{
+    list-style: none;
+}
+/*--HEADER--*/
+.header-top{
+    background-color: black;
+    height: 200px;
+}
+.header-bottom{
+    background-color: red;
+    height: auto;
+}
+.flex{
+    max-width: 1000px;
+    height: 100%;
+    background-color:yellow;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-right, .flex-left{
+    display: flex;
+    background-color: blue;
+}
+.flex-right a{
+    margin-right:60px;    
+}
+ul{
+    border: 3px solid black;
+    display:flex;
+    margin : 0px auto;
+    width:1000px;
+    position: relative; /* cha để cho các thằng con tạo khoảng cách theo */
+}
+.Menu-Topic li{
+    display:inline-block;
+    padding:0 5px;
+
+}
+/* nếu như muốn để li a ở giữa thì dùng line- height , không dùng margin 
+                /* ---- MAIN ---- */
+
+/* ----Content---- */
+.content{
+    border: 3px solid black;
+    margin: 0px auto;
+    width:1000px;
+    display: flex;
+    justify-content: space-between;
+}
+.hot-news{
+    background-color:yellowgreen ;
+    width: 60%;
+}
+
+.newpaper{
+
+    position: relative;
+    background-color:red;
+   height: 100px;
+   
+
+}
+.hot-news > div > div{
+    position: absolute; /* chỉnh căn lề theo thằng cha */
+    text-align: left;
+    bottom: 15px;
+    left: 43px;
+    padding: 8px 10px;
+    background-color: blue;
+}
+.newpaper > a {
+   
+    display: block;
+    background-color: chartreuse;
+    height: 100%;
+    width: 100%;
+} 
+/*----SIDERBAR----*/
+sidebar{
+    background-color: chocolate;
+    width: 30%;
+}
+sidebar > div {
+    border: 3px solid black;
+    position: relative;
+}
+sidebar > div > div >div{
+    position: absolute; /* chỉnh căn lề theo thằng cha */
+    text-align: left;
+    bottom: 15px;
+    left: 43px;
+    padding: 8px 10px;
+    background-color: blue;
+}
+sidebar > div:nth-child(2),div:nth-child(3){
+    display: flex;
+    justify-content: space-between;
+}
+.line-sidebar{   
+    max-width: 60%; /* Kích thước max các  thẻ p thứ 2,3 trong phần sidebar */
+}
+/* --- ListNewPaper --- */
+
+.list-newpaper{
+    border: 3px solid blue;
+    margin: 0px auto;
+    width:1000px;
+    display: flex;
+    height: auto;
+    
+    
+}
+.list-newpaper > .newpaper > a{
+    height : 50% ;
+}
+
+.list-newpaper > .newpaper{
+    
+    width: 20%;
+    display: inline;
+    justify-content: space-between;
+    padding: 0px 14px;
+}
+
+
+
