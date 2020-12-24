@@ -29,15 +29,13 @@ ul{
     height:100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+ 
 }
 ul > li {
+   
 
     width: 100px;
     height: 100px;
-    
-
- 
 }
 ul>li>a{
     display: block; /* CÁCH 1: Nếu như sử dụng a display block thì trên ul phải sử dụng display flex . Nếu sử dụng li là display inline block mà thẻ a dùng display block sẽ bị hiện tượng tràn vùng ra khỏi vùng thẻ ul,
