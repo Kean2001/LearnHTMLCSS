@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+header {
+    background-color: yellow;
+    height: 100px;
+}
+
+header div {
+    width: 1000px;
+    background-color: red;
+    height: 100px;
+    margin: 0px auto;
+    line-height: 100px;
+    text-align: center;
+}
+
+#Menu {
+    background-color: #007bff;
+    width: 1000px;
+    height: 100px;
+    margin: 0px auto;
+}
+
+#Menu>ul {
+    display: flex;
+}
+
+ul>li>a {
+    display: block;
+    /* CÁCH 1: Nếu như sử dụng a display block thì trên ul phải sử dụng display flex . Nếu sử dụng li là display inline block mà thẻ a dùng display block sẽ bị hiện tượng tràn vùng ra khỏi vùng thẻ ul,
+                        vì thẻ li sử dụng inline block, nội dung phải cùng trên một dòng dạng inline  các nội dung dài hơn sẽ đẩy lên trên nên vùng thẻ li nội dung ngắn hơn sẽ tụt xuống dưới 
+                        Giải quyết ta dùng absolute để chỉnh vùng thẻ a theo thằng li */
+    text-decoration: none;
+    width: 120px;
+    line-height: 100px;
+    text-align: center;
+}
+
+ul>li>a:hover {
+    background-color: chartreuse;
+}
+
+ul>li>ul {
+    /* #### dùng cho toàn bộ các thẻ tương tự khi mà ta chưa trỏ vào thẻ li thì thẻ ul sẽ ẩn  */
+    display: none;
+}
+
+ul>li:hover>ul {
+    /* #### dùng cho toàn bộ các thẻ tương tự khi mà trỏ vào thẻ li thì thẻ ul sẽ hiện lên */
+    /* Ta có thể dùng #Menu>ul>li>a:hover+ul nó sẽ ra nhưng mà khi mà ta trỏ xuống ul con thì nó sẽ biến mất vì trỏ ra vùng ngoài thì hover của a cũng biến mất rồi nên phải dùng cách này */
+    display: block;
+    background-color: black;
+}
+
+li>ul>li {
+    position: relative;
+    /* #### dùng cho toàn bộ các thẻ tương tự mọi thằng ul con sẽ lấy thằng li lớp trên là cha  */
+}
+
+li:hover>ul>li>ul {
+    position: absolute;
+    background-color: orange;
+    top: 0;
+    left: 100%
+}
